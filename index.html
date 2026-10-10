@@ -5,23 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#2f3a4a" />
     <title>Питер Лайф</title>
-    <script type="module" crossorigin src="./assets/index-MNkgNpcW.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-M0hW3hxS.css">
+    <script type="module" crossorigin src="./assets/index-BiMh3mBD.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CVE631bM.css">
   </head>
   <body>
     <div id="game"></div>
 
     <div id="hud">
-      <div id="brand">Питер Лайф <span>прототип</span></div>
-      <div id="place">
-        <div id="street">Загружаем город…</div>
-        <div id="landmark" hidden></div>
+      <div id="topbar">
+        <div id="clock">Загружаем город…</div>
+        <div id="money"></div>
       </div>
-      <div id="hint">Ведите пальцем по экрану или жмите WASD, чтобы идти</div>
+      <div id="needs">
+        <div class="need" data-k="hunger"><span>🍲 Еда</span><i><b></b></i></div>
+        <div class="need" data-k="energy"><span>⚡ Силы</span><i><b></b></i></div>
+        <div class="need" data-k="mood"><span>🙂 Настрой</span><i><b></b></i></div>
+        <div class="need" data-k="warmth"><span>🧣 Тепло</span><i><b></b></i></div>
+      </div>
+      <div id="street"></div>
+      <div id="bottom">
+        <div id="hint">Ведите пальцем по экрану или жмите WASD, чтобы идти</div>
+        <div id="track" hidden><span id="track-arrow">➤</span><span id="track-text"></span></div>
+        <button id="enter" hidden></button>
+      </div>
+      <button id="reset" title="Начать заново" aria-label="Начать заново">↺</button>
       <a id="osm" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a>
     </div>
 
     <div id="stick" hidden><div id="stick-thumb"></div></div>
+    <div id="toast" hidden></div>
+
+    <div id="sheet" class="overlay" hidden>
+      <div class="sheet-card">
+        <button id="sheet-close" aria-label="Закрыть">✕</button>
+        <h2 id="sheet-title"></h2>
+        <p id="sheet-sub"></p>
+        <div id="sheet-list"></div>
+      </div>
+    </div>
+
+    <div id="busy" class="overlay" hidden>
+      <div class="busy-card"><p id="busy-text"></p><i><b id="busy-bar"></b></i></div>
+    </div>
+
+    <div id="modal" class="overlay" hidden>
+      <div class="modal-card">
+        <small id="modal-kicker"></small>
+        <h1 id="modal-title"></h1>
+        <p id="modal-text"></p>
+        <button id="modal-ok"></button>
+        <button id="modal-alt" hidden></button>
+      </div>
+    </div>
 
   </body>
 </html>
